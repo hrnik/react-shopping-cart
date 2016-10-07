@@ -20,14 +20,23 @@ module.exports = {
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin()
 	],
-	module:{
-			loaders:[
-				{
-					loaders: ['react-hot', 'babel-loader'],
-					include: [ path.resolve(__dirname, "src")],
-					test: /\.js$/,
-					plugins: ['transform-runtime']
-				}
-			]
+	module: {
+		preLoaders: [ //добавили ESlint в preloaders
+			{
+				test: /\.js$/,
+				loaders: ['eslint'],
+				include: [
+					path.resolve(__dirname, "src"),
+				],
+			}
+		],
+		loaders: [
+			{
+				loaders: ['react-hot', 'babel-loader'],
+				include: [path.resolve(__dirname, "src")],
+				test: /\.js$/,
+				plugins: ['transform-runtime']
+			}
+		]
 	}
 };

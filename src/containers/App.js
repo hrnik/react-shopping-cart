@@ -4,4 +4,4 @@ export default class App extends Component {
 	render() {
 		return <div> React Shopping cart</div>
 	}
-};
+}
