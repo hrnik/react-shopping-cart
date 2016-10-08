@@ -1,4 +1,4 @@
-import { ADD_PRODUCT, DELETE_PRODUCT} from '../constants/Product';
+import { ADD_PRODUCT, DELETE_PRODUCT, REDUCE_PRODUCT_COUNT} from '../constants/Product';
 
 
 const initialState = {
@@ -34,6 +34,16 @@ export default function productsState(state = initialState, action) {
 			return {
 				...state,
 				products: state.products.filter(item => item.id !== action.payload.id)
+			};
+		case REDUCE_PRODUCT_COUNT:
+			return {
+				...state,
+				products: state.products.map(item=>{
+					if(item.id === action.payload.id && item.count > 1){
+						item.count--;
+					}
+					return item;
+				})
 			};
 		default:
 			return state;

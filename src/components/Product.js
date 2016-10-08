@@ -8,9 +8,16 @@ import React, {Component, PropTypes} from 'react';
  * Add item, Remove item
  */
 export default class Product extends Component {
-	onDeleteBtnClick(item) {
-		console.log(item);
+	onDeleteBtnClick() {
 		this.props.deleteProduct(this.props.data);
+	}
+
+	onReduceBtnClick(){
+		this.props.reduceProductCount(this.props.data);
+	}
+
+	onAddBtnClick(){
+		this.props.addProduct(this.props.data);
 	}
 
 	render() {
@@ -21,6 +28,8 @@ export default class Product extends Component {
 				<p>{data.name}</p>
 				<p>{data.count}</p>
 				<p>{data.price}</p>
+				<button onClick={::this.onAddBtnClick}>Add count</button>
+				<button onClick={::this.onReduceBtnClick}>Reduce count</button>
 				<button onClick={::this.onDeleteBtnClick}>Delete</button>
 			</div>
 		);

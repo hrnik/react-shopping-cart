@@ -9,11 +9,14 @@ export default class ProductsTable extends Component {
 
 
 	render() {
-		const {products, deleteProduct} = this.props;
+		const {products, deleteProduct, reduceProductCount, addProduct} = this.props;
 		let productsTemplate = products.map(item=> {
 			return (
 				<div key={item.id}>
-					<Product data={item} deleteProduct={deleteProduct}/>
+					<Product data={item}
+                   deleteProduct={deleteProduct}
+                   reduceProductCount={reduceProductCount}
+                   addProduct={addProduct}/>
 				</div>
 			);
 		});

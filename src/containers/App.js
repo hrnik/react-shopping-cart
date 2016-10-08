@@ -9,13 +9,16 @@ class App extends Component {
 
 	render() {
 		const {products} = this.props.productsState;
-		const {addProduct, deleteProduct} = this.props.productsActions;
+		const {addProduct, deleteProduct, reduceProductCount} = this.props.productsActions;
 
 		return (
 			<div>
 				<h1>React Shopping cart</h1>
 				<AddProduct addProduct={addProduct}/>
-				<ProductsTable products={products} deleteProduct={deleteProduct} />
+				<ProductsTable products={products}
+                       deleteProduct={deleteProduct}
+                       reduceProductCount={reduceProductCount}
+                       addProduct={addProduct}/>
 			</div>);
 	}
 }
