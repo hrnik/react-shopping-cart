@@ -6,10 +6,10 @@ import React, {Component, PropTypes} from 'react';
  */
 export default class ProductsTable extends Component {
 	render() {
-		const { products } = this.props;
-		let productsTemplate = products.map((item, index)=> {
+		const {products} = this.props;
+		let productsTemplate = products.map(item=> {
 			return (
-				<div key={index}>
+				<div key={item.id}>
 					<p>{item.name}</p>
 					<p>{item.count}</p>
 					<p>{item.price}</p>
