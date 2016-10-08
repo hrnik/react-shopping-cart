@@ -5,6 +5,11 @@ import React, {Component, PropTypes} from 'react';
  * Add item, Remove item
  */
 export default class ProductsTable extends Component {
+	onDeleteBtnClick(item) {
+		console.log(item);
+		this.props.deleteProduct(item);
+	}
+
 	render() {
 		const {products} = this.props;
 		let productsTemplate = products.map(item=> {
@@ -13,6 +18,7 @@ export default class ProductsTable extends Component {
 					<p>{item.name}</p>
 					<p>{item.count}</p>
 					<p>{item.price}</p>
+					<button onClick={this.onDeleteBtnClick.bind(this, item)}>Delete</button>
 				</div>
 			);
 		});

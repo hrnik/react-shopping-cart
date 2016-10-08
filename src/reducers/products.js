@@ -27,6 +27,11 @@ export default function productsState(state = initialState, action) {
 				products
 			};
 		}
+		case 'DELETE_PRODUCT':
+			return {
+				...state,
+				products: state.products.filter(item => item.id !== action.payload.id)
+			};
 		default:
 			return state;
 	}

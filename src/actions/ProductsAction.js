@@ -4,3 +4,10 @@ export function addProduct(product) {
 		payload: product
 	}
 }
+
+export function deleteProduct(product) {
+	return {
+		type: 'DELETE_PRODUCT',
+		payload: product
+	}
+}
