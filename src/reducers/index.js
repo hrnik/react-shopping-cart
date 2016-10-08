@@ -1,7 +1,6 @@
-const initialState = {
-	products: []
-};
+import { combineReducers } from 'redux';
+import products from './products';
 
-export default function shopCartState( state = initialState) {
-	return state;
-}
+export default combineReducers({
+	products
+})
