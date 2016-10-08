@@ -1,16 +1,23 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import ProductsTable from '../components/ProductsTable';
 
 class App extends Component {
 
 	render() {
-		return <div> React Shopping cart, { this.props.products.length}</div>
+		const {products} = this.props.productsState;
+		console.log(this.props);
+		return (
+			<div>
+				<h1>React Shopping cart</h1>
+				<ProductsTable products={products}></ProductsTable>
+			</div>);
 	}
 }
 
 function mapStateToProps(state) {
 	return {
-		products: state.products
+		productsState: state.productsState
 	}
 }
 

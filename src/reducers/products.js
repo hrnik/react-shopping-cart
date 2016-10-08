@@ -2,6 +2,6 @@ const initialState = {
 	products: []
 };
 
-export default function products(state = initialState) {
+export default function productsState(state = initialState) {
 	return state;
 }
