@@ -1,10 +1,13 @@
+import { ADD_PRODUCT, DELETE_PRODUCT} from '../constants/Product';
+
+
 const initialState = {
 	products: []
 };
 
 export default function productsState(state = initialState, action) {
 	switch (action.type) {
-		case 'ADD_PRODUCT': {
+		case ADD_PRODUCT: {
 			let isNewProduct = true,
 				newProduct = action.payload,
 				//if product is exist then increment counter
@@ -27,7 +30,7 @@ export default function productsState(state = initialState, action) {
 				products
 			};
 		}
-		case 'DELETE_PRODUCT':
+		case DELETE_PRODUCT:
 			return {
 				...state,
 				products: state.products.filter(item => item.id !== action.payload.id)

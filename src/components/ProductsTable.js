@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import Product from './Produtc'
+import Product from './Product'
 
 /**
  * Component for products table
