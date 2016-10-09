@@ -5,7 +5,7 @@ const initialState = {
 	products: []
 };
 
-export default function productsState(state = initialState, action) {
+const shoppingCart = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_PRODUCT: {
 			let isNewProduct = true,
@@ -49,3 +49,5 @@ export default function productsState(state = initialState, action) {
 			return state;
 	}
 }
+
+export default shoppingCart;

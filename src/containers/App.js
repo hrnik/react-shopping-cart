@@ -28,8 +28,8 @@ const App = ({products, deleteProduct, reduceProductCount, addProduct, totalPric
 
 function mapStateToProps(state) {
 	return {
-		products: state.productsState.products,
-		totalPrice: getTotalPrice(state.productsState.products)
+		products: state.shoppingCart.products,
+		totalPrice: getTotalPrice(state.shoppingCart.products)
 	}
 }
 
