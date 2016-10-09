@@ -7,7 +7,7 @@ export default {
 	 * @return Promise
 	 * @param id
 	 */
-	getProducts: () => new Promise((resolve, reject) => resolve(_products))
+	getProducts: () => new Promise(resolve => resolve(_products))
 
 
 }
