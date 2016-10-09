@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
-import {getProducts} from './actions/ProductsAction'
+import {getProducts} from './actions/StoreAction'
 
 
 const store = configureStore();
