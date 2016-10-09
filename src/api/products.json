@@ -1,0 +1,27 @@
+[
+  {
+    "id": 0,
+    "name": "Cap for cat",
+    "price": 100
+  },
+  {
+    "id": 1,
+    "name": "Сoat of Aphrodite",
+    "price": 230
+  },
+  {
+    "id": 2,
+    "name": "Sword of javascript",
+    "price": 9.99
+  },
+  {
+    "id": 3,
+    "name": "Air bag",
+    "price": 3400
+  },
+  {
+    "id": 4,
+    "name": "Redux Book",
+    "price": 33
+  }
+]
