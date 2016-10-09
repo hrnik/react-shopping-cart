@@ -4,10 +4,12 @@ import {bindActionCreators} from 'redux';
 import ProductsTable from '../components/ProductsTable';
 import Product from '../components/Product';
 import AddProduct from '../components/AddProduct';
+import Checkout from '../components/Checkout';
+import {getTotalPrice} from '../reducers'
 import * as productActions from '../actions/ProductsAction';
 
 
-const App = ({products, deleteProduct, reduceProductCount, addProduct}) => (
+const App = ({products, deleteProduct, reduceProductCount, addProduct, totalPrice}) => (
 	<div>
 		<h1>React Shopping cart</h1>
 		<AddProduct addProduct={addProduct}/>
@@ -20,12 +22,14 @@ const App = ({products, deleteProduct, reduceProductCount, addProduct}) => (
 								 addProduct={addProduct}/>
 			)}
 		</ProductsTable>
+		<Checkout totalPrice={totalPrice}></Checkout>
 	</div>
 );
 
 function mapStateToProps(state) {
 	return {
-		products: state.productsState.products
+		products: state.productsState.products,
+		totalPrice: getTotalPrice(state.productsState.products)
 	}
 }
 
