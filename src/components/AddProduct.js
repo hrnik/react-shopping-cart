@@ -1,30 +1,30 @@
 /**
  * Created by nkhristinin on 08.10.16.
  */
-import React, {Component, PropTypes} from 'react';
+import React, { PropTypes} from 'react';
 
 /**
  * Component for products table
  * Add item, Remove item
  */
-export default class AddProduct extends Component {
-	onAddBtnClick() {
-		this.props.addProduct({
+const AddProduct = ({addProduct}) => {
+	const onAddBtnClick = () => {
+		addProduct({
 			id: 0,
 			name: 'Cap for cat',
 			price: 10
 		});
-	}
+	};
 
-	render() {
-		return (
-			<button onClick={::this.onAddBtnClick}>Add Product</button>
-		);
-	}
-}
+	return (
+		<button onClick={onAddBtnClick}>Add Product</button>
+	);
 
-AddProduct.propType ={
+};
+
+AddProduct.propType = {
 	addProduct: PropTypes.func.isRequired
 };
 
 
+export default AddProduct;
