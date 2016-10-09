@@ -31,6 +31,7 @@ module.exports = {
 			}
 		],
 		loaders: [
+			{ test: /\.json$/, loader: 'json' },
 			{
 				loaders: ['react-hot', 'babel-loader'],
 				include: [path.resolve(__dirname, "src")],

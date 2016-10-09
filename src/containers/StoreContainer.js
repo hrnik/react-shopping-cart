@@ -5,9 +5,12 @@ import {getProducts}  from '../actions/StoreAction';
 import {addProduct} from '../actions/ProductsAction';
 
 
-const StoreContainer = ({addProduct}) => (
+const StoreContainer = ({addProduct, products}) => (
 	<div>
-		<AddProduct addProduct={addProduct}/>
+
+		{products.map(product=>
+			<AddProduct product={product} addProduct={()=>{addProduct(product)}}/>
+		)}
 	</div>
 );
 
@@ -16,7 +19,6 @@ function mapStateToProps(state) {
 		products: state.store.products,
 	}
 }
-
 
 
 export default connect(mapStateToProps,

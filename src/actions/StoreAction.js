@@ -10,10 +10,11 @@ export const getProducts = id => dispatch => {
 	});
 
 	API.getProducts().then(
-		product => {
+		products => {
+			console.log('pro', products);
 			dispatch({
 				type: GET_PRODUCTS_SUCCESS,
-				payload: product
+				payload: products
 			})
 		},
 		error=> {

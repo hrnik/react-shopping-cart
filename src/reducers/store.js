@@ -1,4 +1,4 @@
-import {GET_PRODUCTS_REQUEST} from '../constants/Product';
+import {GET_PRODUCTS_SUCCESS} from '../constants/Store';
 
 const initialState = {
 	products: []
@@ -6,11 +6,13 @@ const initialState = {
 
 const store = (state = initialState, action) => {
 	switch(action.type){
-		case GET_PRODUCTS_REQUEST:
-			return {
+		case GET_PRODUCTS_SUCCESS:{
+				console.log('aa');
+				return {
 				...state,
 				products:action.payload
 			}
+		}
 		default:
 			return state;
 	}

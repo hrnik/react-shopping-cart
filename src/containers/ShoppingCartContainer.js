@@ -8,6 +8,15 @@ import {getTotalPrice} from '../reducers'
 import * as productActions from '../actions/ProductsAction';
 
 
+/**
+ * Container for show table products and checkout info
+ * @param products
+ * @param deleteProduct
+ * @param reduceProductCount
+ * @param addProduct
+ * @param totalPrice
+ * @constructor
+ */
 const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount, addProduct, totalPrice}) => (
 	<div>
 		<ProductsTable>

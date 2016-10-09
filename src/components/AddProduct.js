@@ -4,26 +4,15 @@
 import React, { PropTypes} from 'react';
 
 /**
- * Component for products table
- * Add item, Remove item
+ * Component for show add product button
  */
-const AddProduct = ({addProduct}) => {
-	const onAddBtnClick = () => {
-		addProduct({
-			id: 0,
-			name: 'Cap for cat',
-			price: 10
-		});
-	};
-
-	return (
-		<button onClick={onAddBtnClick}>Add Product</button>
-	);
-
-};
+const AddProduct = ({addProduct, product}) => (
+		<button onClick={addProduct}>Add {product.name}</button>
+);
 
 AddProduct.propType = {
-	addProduct: PropTypes.func.isRequired
+	addProduct: PropTypes.func.isRequired,
+	product: PropTypes.object.isRequired
 };
 
 
