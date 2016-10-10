@@ -6,6 +6,8 @@ import App from './containers/App';
 import configureStore from './store/configureStore';
 import {getProducts} from './actions/StoreAction'
 import {loadState, saveState} from './utils/localStorage';
+import 'normalize.css';
+import './styles/app.css';
 
 //load state from localStorage
 const savedState = loadState();

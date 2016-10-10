@@ -7,7 +7,7 @@ import React, { PropTypes} from 'react';
  * Component for show add product button
  */
 const AddProduct = ({addProduct, product}) => (
-		<button onClick={addProduct}>Add {product.name}</button>
+		<button className='btn' onClick={addProduct}>Add {product.name}</button>
 );
 
 AddProduct.propType = {

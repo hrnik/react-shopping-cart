@@ -1,7 +1,7 @@
 /**
  * Created by nkhristinin on 08.10.16.
  */
-import React, { PropTypes} from 'react';
+import React, {PropTypes} from 'react';
 
 /**
  * Component for products table
@@ -22,13 +22,17 @@ const Product = ({deleteProduct, reduceProductCount, addProduct, data}) => {
 
 
 	return (
-		<div>
-			<p>{data.name}</p>
-			<p>{data.count}</p>
-			<p>{data.price * data.count}</p>
-			<button onClick={onAddBtnClick}>Add count</button>
-			<button onClick={onReduceBtnClick}>Reduce count</button>
-			<button onClick={onDeleteBtnClick}>Delete</button>
+		<div className='table-price__row'>
+			<div className='table-price__cell table-price__cell--delete'>
+				<div onClick={onDeleteBtnClick} className='icon-delete icon'></div>
+			</div>
+			<div className='table-price__cell table-price__cell--name'>{data.name}</div>
+			<div className='table-price__cell table-price__cell--count'>
+				<div className="icon icon-minus" onClick={onReduceBtnClick}></div>
+				<div className="count-text">{data.count}</div>
+				<div className="icon icon-plus" onClick={onAddBtnClick}></div>
+			</div>
+			<div className='table-price__cell table-price__cell--price'>{data.price * data.count} $</div>
 		</div>
 	);
 

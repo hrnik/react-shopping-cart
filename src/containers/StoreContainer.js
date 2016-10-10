@@ -6,8 +6,7 @@ import {addProduct} from '../actions/ProductsAction';
 
 
 const StoreContainer = ({addProduct, products}) => (
-	<div>
-
+	<div className='store-btn-container'>
 		{products.map(product=>
 			<AddProduct key={product.id} product={product} addProduct={()=>{addProduct(product)}}/>
 		)}

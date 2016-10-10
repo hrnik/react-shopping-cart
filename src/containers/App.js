@@ -4,9 +4,13 @@ import StoreContainer from './StoreContainer';
 
 const App = () => (
 	<div>
-		<h1>React Shopping cart</h1>
-		<StoreContainer></StoreContainer>
-		<ShoppingCartContainer></ShoppingCartContainer>
+		<header className='header'>
+			React Shopping cart
+		</header>
+		<main className='main'>
+			<StoreContainer></StoreContainer>
+			<ShoppingCartContainer></ShoppingCartContainer>
+		</main>
 	</div>
 );
 

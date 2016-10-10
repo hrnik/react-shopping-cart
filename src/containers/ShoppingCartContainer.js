@@ -21,7 +21,7 @@ import * as productActions from '../actions/ProductsAction';
 const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount,
 																addProduct, totalPrice, buyProducts, sync}) => (
 	<div>
-		<ProductsTable>
+		{products.length && <ProductsTable>
 			{products.map(item=>
 				<Product key={item.id}
 								 data={item}
@@ -29,7 +29,7 @@ const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount,
 								 reduceProductCount={reduceProductCount}
 								 addProduct={addProduct}/>
 			)}
-		</ProductsTable>
+		</ProductsTable>}
 		<Checkout totalPrice={totalPrice} buyProducts={()=>buyProducts()}>
 			{sync && <SyncMessage message={sync.message} isError={sync.isError}></SyncMessage>}
 		</Checkout>
