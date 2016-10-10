@@ -9,12 +9,12 @@ const Checkout = ({totalPrice, buyProducts, children}) => {
 
 	return (
 		<div>
-			<div className="total-info">
-				<div className="total-info__label">Total</div>
-				<div className="total-info__number">{totalPrice} $</div>
+			<div className='total-info'>
+				<div className='total-info__label'>Total</div>
+				<div className='total-info__number'>{totalPrice} $</div>
 			</div>
-			<div className="checkout-btn-container">
-				<button className="btn btn--primary" onClick={buyProducts}>Buy</button>
+			<div className='checkout-btn-container'>
+				<button className='btn btn--primary' onClick={buyProducts}>Buy</button>
 			</div>
 			{children}
 		</div>

@@ -28,9 +28,9 @@ const Product = ({deleteProduct, reduceProductCount, addProduct, data}) => {
 			</div>
 			<div className='table-price__cell table-price__cell--name'>{data.name}</div>
 			<div className='table-price__cell table-price__cell--count'>
-				<div className="icon icon-minus" onClick={onReduceBtnClick}></div>
-				<div className="count-text">{data.count}</div>
-				<div className="icon icon-plus" onClick={onAddBtnClick}></div>
+				<div className='icon icon-minus' onClick={onReduceBtnClick}></div>
+				<div className='count-text'>{data.count}</div>
+				<div className='icon icon-plus' onClick={onAddBtnClick}></div>
 			</div>
 			<div className='table-price__cell table-price__cell--price'>{data.price * data.count} $</div>
 		</div>
