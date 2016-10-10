@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux';
 import shoppingCart from './shoppingCart';
 import store from './store';
+import sync from './sync';
 
 export default combineReducers({
 	shoppingCart,
-	store
+	store,
+	sync
 })
 
 /**

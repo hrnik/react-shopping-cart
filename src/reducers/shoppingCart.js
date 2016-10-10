@@ -2,7 +2,8 @@ import { ADD_PRODUCT, DELETE_PRODUCT, REDUCE_PRODUCT_COUNT} from '../constants/P
 
 
 const initialState = {
-	products: []
+	products: [],
+
 };
 
 const shoppingCart = (state = initialState, action) => {
@@ -48,6 +49,6 @@ const shoppingCart = (state = initialState, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default shoppingCart;

@@ -9,7 +9,7 @@ const StoreContainer = ({addProduct, products}) => (
 	<div>
 
 		{products.map(product=>
-			<AddProduct product={product} addProduct={()=>{addProduct(product)}}/>
+			<AddProduct key={product.id} product={product} addProduct={()=>{addProduct(product)}}/>
 		)}
 	</div>
 );

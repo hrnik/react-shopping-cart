@@ -5,12 +5,13 @@ import React, { PropTypes} from 'react';
  * Add item, Remove item
  */
 
-const Checkout = ({totalPrice}) => {
+const Checkout = ({totalPrice,buyProducts, children}) => {
 
 	return (
 		<div>
+			{children}
 			<p>{totalPrice}</p>
-			<button>Buy</button>
+			<button onClick={buyProducts}>Buy</button>
 		</div>
 	);
 
@@ -18,7 +19,8 @@ const Checkout = ({totalPrice}) => {
 
 
 Checkout.propTypes = {
-	totalPrice: PropTypes.number.isRequired
+	totalPrice: PropTypes.number.isRequired,
+	buyProducts:PropTypes.func.isRequired
 };
 
 export default Checkout;

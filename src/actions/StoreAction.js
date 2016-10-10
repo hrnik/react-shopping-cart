@@ -11,7 +11,6 @@ export const getProducts = id => dispatch => {
 
 	API.getProducts().then(
 		products => {
-			console.log('pro', products);
 			dispatch({
 				type: GET_PRODUCTS_SUCCESS,
 				payload: products
@@ -23,4 +22,4 @@ export const getProducts = id => dispatch => {
 				payload: error
 			})
 		});
-}
+};

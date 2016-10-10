@@ -7,7 +7,6 @@ const initialState = {
 const store = (state = initialState, action) => {
 	switch(action.type){
 		case GET_PRODUCTS_SUCCESS:{
-				console.log('aa');
 				return {
 				...state,
 				products:action.payload
