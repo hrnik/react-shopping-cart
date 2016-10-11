@@ -19,9 +19,11 @@ import * as productActions from '../actions/ProductsAction';
  * @constructor
  */
 const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount,
-																addProduct, totalPrice, buyProducts, sync}) => (
+																addProduct, totalPrice, buyProducts, sync,
+																sortTableProducts, sort}) => (
 	<div>
-		{products.length && <ProductsTable>
+		{sort.field} {''+sort.isAsk}
+		{products.length && <ProductsTable sortTableProducts={sortTableProducts}>
 			{products.map(item=>
 				<Product key={item.id}
 								 data={item}
@@ -39,6 +41,7 @@ const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount,
 function mapStateToProps(state) {
 	return {
 		products: state.shoppingCart.products,
+		sort: state.shoppingCart.sort,
 		sync: state.sync,
 		totalPrice: getTotalPrice(state.shoppingCart.products)
 	}

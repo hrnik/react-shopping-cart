@@ -20,7 +20,7 @@ export default {
 		if(products.length > 3){
 			resolve('Ok!');
 		} else {
-			reject(new Error('Malo'));
+			reject(new Error('3 products min'));
 		}
 	})
 

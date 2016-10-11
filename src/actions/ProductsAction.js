@@ -1,7 +1,8 @@
 import API from '../api/API';
 import {
 	ADD_PRODUCT, DELETE_PRODUCT, REDUCE_PRODUCT_COUNT,
-	BUY_PRODUCT_REQUEST, BUY_PRODUCT_SUCCESS, BUY_PRODUCT_FAILURE
+	BUY_PRODUCT_REQUEST, BUY_PRODUCT_SUCCESS, BUY_PRODUCT_FAILURE,
+	SORT_TABLE_PRODUCT
 } from '../constants/Product';
 
 export const addProduct = product => ({
@@ -17,6 +18,11 @@ export const deleteProduct = product => ({
 export const reduceProductCount = product => ({
 	type: REDUCE_PRODUCT_COUNT,
 	payload: product
+});
+
+export const sortTableProducts = field => ({
+	type:SORT_TABLE_PRODUCT,
+	payload:field
 });
 
 export const buyProducts = () => (dispatch, getState) => {

@@ -9,6 +9,8 @@ export default combineReducers({
 	sync
 })
 
+
+
 /**
  * Return total price for products list
  * @param products
