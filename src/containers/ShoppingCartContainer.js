@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import ProductsTable from '../components/ProductsTable';
 import Product from '../components/Product';
 import Checkout from '../components/Checkout';
+import TableHeader from '../components/TableHeader';
 import SyncMessage from '../components/SyncMessage';
 import {getTotalPrice} from '../reducers'
 import * as productActions from '../actions/ProductsAction';
@@ -18,23 +19,28 @@ import * as productActions from '../actions/ProductsAction';
  * @param totalPrice
  * @constructor
  */
-const ShoppingCartContainer = ({products, deleteProduct, reduceProductCount,
-																addProduct, totalPrice, buyProducts, sync,
-																sortTableProducts, sort}) => (
+const ShoppingCartContainer = ({
+	products, deleteProduct, reduceProductCount,
+	addProduct, totalPrice, buyProducts, sync,
+	sortTableProducts, sort
+}) => (
 	<div>
-		{sort.field} {''+sort.isAsk}
-		{products.length && <ProductsTable sortTableProducts={sortTableProducts}>
-			{products.map(item=>
-				<Product key={item.id}
-								 data={item}
-								 deleteProduct={deleteProduct}
-								 reduceProductCount={reduceProductCount}
-								 addProduct={addProduct}/>
-			)}
-		</ProductsTable>}
-		<Checkout totalPrice={totalPrice} buyProducts={()=>buyProducts()}>
-			{sync && <SyncMessage message={sync.message} isError={sync.isError}></SyncMessage>}
-		</Checkout>
+		{!!products.length &&
+		<div>
+			<ProductsTable>
+				<TableHeader sort={sort} sortTableProducts={sortTableProducts}></TableHeader>
+				{products.map(item=>
+					<Product key={item.id}
+									 data={item}
+									 deleteProduct={deleteProduct}
+									 reduceProductCount={reduceProductCount}
+									 addProduct={addProduct}/>
+				)}
+			</ProductsTable>
+			<Checkout totalPrice={totalPrice} buyProducts={()=>buyProducts()}>
+				{sync && <SyncMessage message={sync.message} isError={sync.isError}></SyncMessage>}
+			</Checkout>
+		</div>}
 	</div>
 );
 

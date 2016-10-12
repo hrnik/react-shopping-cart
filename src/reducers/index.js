@@ -17,7 +17,7 @@ export default combineReducers({
  * @returns {Number}
  */
 export const getTotalPrice = (products) => {
-	return products.reduce((sum, current)=>{
-		return sum + current.price*current.count
-	},0);
+	return +products.reduce((sum, current)=>{
+		return (sum + current.price*current.count)
+	},0).toFixed(2);
 };

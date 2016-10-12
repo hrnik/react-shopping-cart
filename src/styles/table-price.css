@@ -15,6 +15,10 @@
     color:#fff;
 }
 
+.table-price__row--header .table-price__cell{
+    cursor: pointer;
+}
+
 .table-price__cell{
     //flex: 1;
     display: flex;
