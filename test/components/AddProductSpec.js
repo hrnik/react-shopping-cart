@@ -30,7 +30,7 @@ describe('<AddProduct />', function () {
 		expect(button.text()).to.equal('Add btnName');
 	});
 
-	it('should call action after btn click', () =>{
+	it('should call action addProduct after btn click', () =>{
 		const {button, actions} = setup({
 			name:'btn name'
 		});
