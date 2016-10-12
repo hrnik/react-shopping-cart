@@ -4,43 +4,47 @@
 import React, {PropTypes} from 'react';
 
 /**
- * Component for products table
- * Add item, Remove item
+ * Component for products row
+ * Add/Reduce count item, Remove item, show price
+ * 
+ * @param deleteProduct
+ * @param reduceProductCount
+ * @param addProduct
+ * @param product
  */
-const Product = ({deleteProduct, reduceProductCount, addProduct, data}) => {
+const Product = ({deleteProduct, reduceProductCount, addProduct, product}) => {
 	const onDeleteBtnClick = () => {
-		deleteProduct(data);
+		deleteProduct(product);
 	};
 
 	const onReduceBtnClick = () => {
-		reduceProductCount(data);
+		reduceProductCount(product);
 	};
 
 	const onAddBtnClick = () => {
-		addProduct(data);
+		addProduct(product);
 	};
-
 
 	return (
 		<div className='table-price__row'>
 			<div className='table-price__cell table-price__cell--delete'>
 				<div onClick={onDeleteBtnClick} className='icon-delete icon'></div>
 			</div>
-			<div className='table-price__cell table-price__cell--name'>{data.name}</div>
+			<div className='table-price__cell table-price__cell--name'>{product.name}</div>
 			<div className='table-price__cell table-price__cell--count'>
-				<div className={'icon icon-minus ' + (data.count == 1 ? 'icon--disabled ': ' ')} onClick={onReduceBtnClick}></div>
-				<div className='count-text'>{data.count}</div>
+				<div className={'icon icon-minus ' + (product.count == 1 ? 'icon--disabled ' : ' ')}
+						 onClick={onReduceBtnClick}></div>
+				<div className='count-text'>{product.count}</div>
 				<div className='icon icon-plus' onClick={onAddBtnClick}></div>
 			</div>
-			<div className='table-price__cell table-price__cell--price'>{(data.price * data.count).toFixed(2)} $</div>
+			<div className='table-price__cell table-price__cell--priceCount'>{product.priceCount} $</div>
 		</div>
 	);
-
 };
 
 
 Product.propTypes = {
-	data: PropTypes.object.isRequired,
+	product: PropTypes.object.isRequired,
 	deleteProduct: PropTypes.func.isRequired
 };
 

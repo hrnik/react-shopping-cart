@@ -12,12 +12,16 @@ import * as productActions from '../actions/ProductsAction';
 
 /**
  * Container for show table products and checkout info
+ *
  * @param products
  * @param deleteProduct
  * @param reduceProductCount
  * @param addProduct
  * @param totalPrice
- * @constructor
+ * @param buyProducts
+ * @param sync
+ * @param sortTableProducts
+ * @param sort
  */
 const ShoppingCartContainer = ({
 	products, deleteProduct, reduceProductCount,
@@ -31,7 +35,7 @@ const ShoppingCartContainer = ({
 				<TableHeader sort={sort} sortTableProducts={sortTableProducts}></TableHeader>
 				{products.map(item=>
 					<Product key={item.id}
-									 data={item}
+									 product={item}
 									 deleteProduct={deleteProduct}
 									 reduceProductCount={reduceProductCount}
 									 addProduct={addProduct}/>
@@ -44,6 +48,7 @@ const ShoppingCartContainer = ({
 	</div>
 );
 
+//Mapping state to props
 function mapStateToProps(state) {
 	return {
 		products: state.shoppingCart.products,
@@ -53,6 +58,7 @@ function mapStateToProps(state) {
 	}
 }
 
+//mapping action to props
 function mapDispatchToProps(dispatch) {
 	let boundActionCreators = bindActionCreators(productActions, dispatch);
 	return {

@@ -3,15 +3,14 @@ import '../styles/table-price.css'
 
 /**
  * Component for products table
- * Add item, Remove item
+ *
+ * @param children
  */
-
 const ProductsTable = ({children}) => (
-		<div className='table-price'>
-			{children}
-		</div>
-	);
-
+	<div className='table-price'>
+		{children}
+	</div>
+);
 
 ProductsTable.propTypes = {
 	children: PropTypes.node,

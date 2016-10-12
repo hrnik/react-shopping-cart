@@ -1,19 +1,23 @@
 import React, {PropTypes} from 'react';
 
 /**
- * Component for products table
- * Add item, Remove item
+ * Component for table header
+ * Sort table from field
+ *
+ * @param sort
+ * @param sortTableProducts
  */
-
 const TableHeader = ({sort, sortTableProducts}) => {
+	const fieldArray = [
+		{name: 'Name',  field: 'name'},
+		{name: 'Count', field: 'count'},
+		{name: 'Price', field: 'priceCount'}
+		];
 	const onSortClick = field => {
 		sortTableProducts(field)
 	};
 
-	const toolBar = [{name: 'Name', field: 'name'}, {name: 'Count', field: 'count'}, {
-		name: 'Price',
-		field: 'price'
-	}].map(item=>(
+	const toolBarTemplate = fieldArray.map(item=>(
 		<div key={item.field} onClick={onSortClick.bind(this, item.field)}
 				 className={'table-price__cell ' + 'table-price__cell' + '--' + item.field}>{item.name}
 			<div
@@ -24,7 +28,7 @@ const TableHeader = ({sort, sortTableProducts}) => {
 	return (
 		<div className='table-price__row table-price__row--header'>
 			<div className='table-price__cell table-price__cell--delete'></div>
-			{toolBar}
+			{toolBarTemplate}
 		</div>
 	)
 };

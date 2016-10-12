@@ -5,7 +5,6 @@ export default {
 	/**
 	 * Return all product from json
 	 * @return Promise
-	 * @param id
 	 */
 	getProducts: () => new Promise(resolve => resolve(_products)),
 
@@ -20,7 +19,7 @@ export default {
 		if(products.length > 3){
 			resolve('Ok!');
 		} else {
-			reject(new Error('3 products min'));
+			reject(new Error('4 products min'));
 		}
 	})
 

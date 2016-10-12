@@ -3,10 +3,13 @@ import {
 	GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS
 } from '../constants/Store';
 
-export const getProducts = id => dispatch => {
+/**
+ * Get products from json, for fake store
+ * @param id
+ */
+export const getProducts = () => dispatch => {
 	dispatch({
-		type: GET_PRODUCTS_REQUEST,
-		payload: id
+		type: GET_PRODUCTS_REQUEST
 	});
 
 	API.getProducts().then(

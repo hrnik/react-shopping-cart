@@ -15,7 +15,11 @@ const store = configureStore(savedState);
 
 //save state to localStorage after update
 store.subscribe(()=> {
-	saveState(store.getState());
+	let state = store.getState();
+	saveState({
+		shoppingCart: state.shoppingCart,
+		store: state.store
+	});
 });
 
 //get all products for fake add btn's

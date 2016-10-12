@@ -2,6 +2,9 @@ import React from 'react';
 import ShoppingCartContainer from './ShoppingCartContainer';
 import StoreContainer from './StoreContainer';
 
+/**
+ * Main container
+ */
 const App = () => (
 	<div>
 		<header className='header'>

@@ -5,6 +5,9 @@ import React, { PropTypes} from 'react';
 
 /**
  * Component for show add product button
+ *
+ * @param addProduct
+ * @param product
  */
 const AddProduct = ({addProduct, product}) => (
 		<button className='btn' onClick={addProduct}>Add {product.name}</button>

@@ -1,13 +1,14 @@
 import React, {PropTypes} from 'react';
 import '../styles/total-info.css';
+
 /**
- * Component for checkout and show total pric
- * Add item, Remove item
+ * Component for checkout and show total price
+ *
+ * @param totalPrice
+ * @param buyProducts
+ * @param children
  */
-
-const Checkout = ({totalPrice, buyProducts, children}) => {
-
-	return (
+const Checkout = ({totalPrice, buyProducts, children}) => (
 		<div>
 			<div className='total-info'>
 				<div className='total-info__label'>Total</div>
@@ -19,9 +20,6 @@ const Checkout = ({totalPrice, buyProducts, children}) => {
 			{children}
 		</div>
 	);
-
-};
-
 
 Checkout.propTypes = {
 	totalPrice: PropTypes.number.isRequired,
