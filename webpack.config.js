@@ -7,6 +7,7 @@ var autoprefixer = require('autoprefixer');
 var precss = require('precss');
 
 
+
 module.exports = {
 	devtool: 'eval',
 	entry: [
@@ -17,7 +18,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'dist'),
 		filename: 'bundle.js',
-		publicPath: '/static/'
+		publicPath: '/dist/'
 	},
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
@@ -53,5 +54,5 @@ module.exports = {
 		'cheerio': 'window',
 		'react/lib/ExecutionEnvironment': true,
 		'react/lib/ReactContext': true,
-	}
+	},
 };
