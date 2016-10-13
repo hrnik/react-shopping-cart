@@ -1,5 +1,5 @@
 import {ADD_PRODUCT, DELETE_PRODUCT, REDUCE_PRODUCT_COUNT, SORT_TABLE_PRODUCT} from '../constants/Product';
-import stable from 'stable';
+import stableSort from '../utils/sort';
 
 const sort = {
 	field: '',
@@ -74,9 +74,10 @@ const shoppingCart = (state = initialState, action) => {
 
 			let ask = isAsk ? 1 : -1;
 			//stable sort products list from field
-			let products = stable(state.products, (a, b) => {
+			let products = stableSort(state.products, (a, b) => {
 				if (a[field] > b[field]) return ask;
 				if (a[field] < b[field]) return -(ask);
+				return 0;
 			});
 
 			return {
